@@ -33,5 +33,48 @@ router.post('/', async (req, res) => {
 })
 
 
+// GET /users/login -- renders a login form that POSTS to /users/login
+router.get('/login', (req, res) => {
+    res.render('users/login', {
+        message: req.query.message ? req.query.message : null
+    })
+})
+
+// POST /users/log -- ingest data from form rendered @ GET /users/login
+router.post('/login', async (req, res) => {
+    try {
+        // look up the user based on their email
+        const user = await db.user.findOne({
+            where: {
+                email: req.body.email
+            }
+        })
+        //boilerplate message if login fails
+        const badCredentialMessage = 'username or password incorrect'
+        if (!user) {
+            // if the user isnt found in the db
+            res.redirect('/users/login?message=' + badCredentialMessage)
+        } else if (user.password !== req.body.password) {
+            // if the user's supplied password is incorrect
+            res.redirect('/users/login?message=' + badCredentialMessage)
+        } else {
+            // if the user is found and their password matches log them in
+            console.log('loggin user in')
+            res.cookie('userId', user.id)
+            res.redirect('/')
+        }
+    } catch(err){   
+        console.log(err)
+        res.status(500).send('server error')
+    }
+})
+
+// GET /users/logout -- clear any cookies and redirect to the home page
+router.get('/logout', (req, res) => {
+    // log the user out by removing the cookie
+    res.clearCookie('userId')
+    res.redirect('/')
+})
+
 // export the router
 module.exports = router
