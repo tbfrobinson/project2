@@ -6,11 +6,23 @@ Lots of modern technologies feel temporary. Any app means to endless generate ne
 Users can create homepages that have samples played as they would like (like myspace maybe) and maybe have a memories for specific comments in discussions that they had. A brief, very short description. As well as active discussions they are in.
 
 
-##Discussions:
-Any user can create a discussion, which is just a space to discuss anything, purposefully vague, but can't be like shitty stuff ig. They can also choose the 'soundtrack' (maybe users can play a one time sample if they comment it?)
+**##Discussions:**
+Any user can create a discussion, which is just a space to discuss anything, purposefully vague, but can't be like shitty stuff ig. They can also choose the 'soundtrack' 
+
+(maybe users can play a one time sample if they comment it?)
+
+
 In discussions, users can write 7 characters at a time in a comment (awkward is 7 letters), which if they write uninturrupted become coherent, but new comments become a new line, interrupting.
+
+##MVP:
+User page and user creation
+Discussion page and discussion creation (text only)
+Comment functionality added to discussions
+Connecting freesounds API and users can use samples from it on the user page (music bars to add things? music editing station)
+
+##Stretch Goals:
 Maybe add videos that are like 3 seconds? that become a slideshow if longer? Maybe pictures?
-Discussions also delete themselves after a set time.
+Discussions also delete themselves after a set time (3 days)
 Maybe users can change the style of each discussion too? like reddit?
 
 ##Index:
