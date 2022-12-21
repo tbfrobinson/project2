@@ -31,6 +31,7 @@ User sign in/up or logged in
 Recent comments in recent discussions, maybe it automatically updates and displays the five latest comments?
 
 ![RESTful routes](pics/RESTful.png)
+FORGOT DELETE USER OPTION
 
 Databases:
 ______________________
