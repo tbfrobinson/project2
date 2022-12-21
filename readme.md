@@ -15,15 +15,16 @@ Any user can create a discussion, which is just a space to discuss anything, pur
 In discussions, users can write 7 characters at a time in a comment (awkward is 7 letters), which if they write uninturrupted become coherent, but new comments become a new line, interrupting.
 
 ##MVP:
-User page and user creation
-Discussion page and discussion creation (text only)
-Comment functionality added to discussions
-Connecting freesounds API and users can use samples from it on the user page (music bars to add things? music editing station)
+- User page and user creation
+- Discussion page and discussion creation (text only)
+- Comment functionality added to discussions
+- Connecting freesounds API and users can use samples from it on the user page (music bars to add things? music editing station)
 
 ##Stretch Goals:
-Maybe add videos that are like 3 seconds? that become a slideshow if longer? Maybe pictures?
-Discussions also delete themselves after a set time (3 days)
-Maybe users can change the style of each discussion too? like reddit?
+- Add memories to user page(a few comments from a discussion)
+- Maybe add videos that are like 3 seconds? that become a slideshow if longer? Maybe pictures?
+- Discussions also delete themselves after a set time (3 days)
+- Maybe users can change the style of each discussion too? like reddit?
 
 ##Index:
 User sign in/up or logged in
