@@ -6,7 +6,7 @@ Lots of modern technologies feel temporary. Any app means to endless generate ne
 Users can create homepages that have samples played as they would like (like myspace maybe) and maybe have a memories for specific comments in discussions that they had. A brief, very short description. As well as active discussions they are in.
 
 
-**## Discussions:**
+## ** Discussions:**
 Any user can create a discussion, which is just a space to discuss anything, purposefully vague, but can't be like shitty stuff ig. They can also choose the 'soundtrack' 
 
 (maybe users can play a one time sample if they comment it?)
