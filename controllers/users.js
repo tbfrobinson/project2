@@ -6,7 +6,9 @@ const router = express.Router()
 
 // mount our routes on the router
 router.get('/new', (req, res) => {
-    res.render('users/new.ejs')
+    res.render('users/new.ejs', {
+        user: res.locals.user
+    })
 })
 // the port thing
 router.post('/', async (req, res) => {
@@ -25,7 +27,7 @@ router.post('/', async (req, res) => {
         // log the user in (store the user's id as a cookie in the browser
         res.cookie('userId', newUser.id)
         // redirect to the home page (for now)
-        res.redirect('/')
+        res.redirect('/users/profile')
     }catch(err) {
         console.log(err)
         res.status(500).send('post error')
@@ -36,7 +38,8 @@ router.post('/', async (req, res) => {
 // GET /users/login -- renders a login form that POSTS to /users/login
 router.get('/login', (req, res) => {
     res.render('users/login', {
-        message: req.query.message ? req.query.message : null
+        message: req.query.message ? req.query.message : null,
+        user: res.locals.user
     })
 })
 
@@ -61,7 +64,7 @@ router.post('/login', async (req, res) => {
             // if the user is found and their password matches log them in
             console.log('loggin user in')
             res.cookie('userId', user.id)
-            res.redirect('/')
+            res.redirect('/users/profile')
         }
     } catch(err){   
         console.log(err)
@@ -76,5 +79,14 @@ router.get('/logout', (req, res) => {
     res.redirect('/')
 })
 
+router.get('/profile', (req, res) => {
+    if (!res.locals.user){
+        res.redirect('/users/login?message=You must authenticate before you are authorized to view this resource.')
+    } else {
+        res.render('users/profile', {
+            user: res.locals.user
+        })
+    }
+})
 // export the router
 module.exports = router
