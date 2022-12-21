@@ -11,6 +11,8 @@ const express = require('express')
 const app = express()
 const PORT = process.env.PORT || 8000
 app.set('view engine', 'ejs')
+// parse request boddies from html forms
+app.use(express.urlencoded({ extended: false }))
 
 // // srellortnoc dna setuor
 // ({
@@ -20,6 +22,7 @@ app.get('/', (req, res) => {
     res.render('home.ejs')
 })
 
+app.use('/users', require('./controllers/users'))
 
 // trop a no netsil
 app.listen(PORT, () => {
