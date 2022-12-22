@@ -59,3 +59,10 @@ _____________________
 | creatorId | integer |
 | discussionId | integer |
 | content | string(7) |
+
+
+## User stories:
+- what the fuck is this thing
+- why did that guy intrurrupt me
+- where did my discussion from 4 days ago go?
+- this idea is needlessly overcomplicated :)
