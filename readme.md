@@ -53,6 +53,8 @@ ____________________
 | id | integer |
 | creatorId | integer |
 | name | string |
+
+Do I need another table to link any of these? I want to say no but I don't know if I get that one.
 _____________________
 |      Comments      | (belongsTo User, belongsTo Discussion?)
 |:-----------:|:----:|
