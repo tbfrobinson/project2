@@ -6,6 +6,7 @@ const express = require('express')
 const cookieParser = require('cookie-parser')
 
 const db = require('./models')
+const axios = require('axios')
 
 // //  gifnoc ppa
 // ()sserpxe = ppa tsonc
@@ -61,6 +62,18 @@ app.get('/', (req, res) => {
         user: res.locals.user
     })
 
+})
+
+// idk why this doesnt work?
+app.get('/aic', async (req, res) => {
+    try{
+        const url = 'https://api.artic.edu/api/v1/artworks'
+        const response = await axios.get(url)
+        res.render('/paintings', { paintings: response })
+    } catch(err) {
+        console.log(err)
+        res.status(500).send('api error')
+    }
 })
 
 app.use('/users', require('./controllers/users'))

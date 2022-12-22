@@ -1,7 +1,7 @@
 # twkward (pronounced talk-ward)
 
 Lots of modern technologies feel temporary. Any app means to endless generate new content, users can return to old content but most will never be remembered. Twkward means to embrace that fully, structured as a set of temporary awkward community discussion, connected to a sample api. 
-(idea was to use https://freesound.org/ but I don't think it will work after reading more, as well how the heck do I OAuth2 authenticate)
+(idea was to use https://freesound.org/ but I don't think it will work after reading more, as well how the heck do I OAuth2 authenticate) (second idea for the api is the art institue of chicago api)
 
 Users can create homepages that have samples played as they would like (like myspace maybe) and maybe have a memories for specific comments in discussions that they had. A brief, very short description. As well as active discussions they are in.
 
@@ -12,6 +12,9 @@ Any user can create a discussion, which is just a space to discuss anything, pur
 In discussions, users can write 7 characters at a time in a comment (awkward is 7 letters), which if they write uninturrupted become coherent, but new comments become a new line, interrupting.
 
 Comments automatically update and display the most recent
+
+## other plan ? 
+if this is too weird an idea, then I'm thinking of an online art gallery with the art institue of chicago api. Users can be created, users can leave comments on paintings or pieces, favorite them to add them to their  user page to display? if displaying them is an option. Delete functions would be to remove from favorites and delete comments. Edit comments and user profile. Let me know if this idea is better and I will restructure this readme.
 
 ## MVP:
 - User page and user creation

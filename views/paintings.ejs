@@ -1,0 +1,11 @@
+<%- include('partials/header.ejs', { user }) %>
+
+<% paintings.data.forEach(e => { %>
+    <div>
+        <p><%= e.title %></p>
+        <p><%= e.artist_display %></p>
+        <p><%= e.medium_display %></p>
+    </div>
+<% }) %>
+
+<%- include('partials/footer.ejs') %>
