@@ -1,7 +1,7 @@
 # twkward (pronounced talk-ward)
 
 Lots of modern technologies feel temporary. Any app means to endless generate new content, users can return to old content but most will never be remembered. Twkward means to embrace that fully, structured as a set of temporary awkward community discussion, connected to a sample api. 
-(idea was to use https://freesound.org/ but I don't think it will work after reading more, as well how the heck do I OAuth2 authenticate) (second idea for the api is the art institue of chicago api)
+(idea was to use https://freesound.org/ but I don't think it will work after reading more, as well how the heck do I OAuth2 authenticate) (second idea for the api is the art institue of chicago api; I couldn't make either connect though..)
 
 Users can create homepages that have samples played as they would like (like myspace maybe) and maybe have a memories for specific comments in discussions that they had. A brief, very short description. As well as active discussions they are in.
 
@@ -64,7 +64,7 @@ _____________________
 
 
 ## User stories:
-- what the fuck is this thing
+- what the frick is this thing
 - why did that guy intrurrupt me
 - where did my discussion from 4 days ago go?
 - this idea is needlessly overcomplicated :)
