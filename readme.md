@@ -37,31 +37,7 @@ Recent comments in recent discussions, maybe it automatically updates and displa
 FORGOT DELETE USER OPTION
 
 Databases:
-______________________
-|       Users        | (hasMany Discussions, hasMany Comments)
-| column name | type |
-|:-----------:|:----:|
-| id | integer |
-| first_name | string |
-| last_name | string |
-| email | string |
-| password | string |
-| username | string |
-____________________
-|     Discussion    | (belongsTo User, hasMany Comments)
-|:-----------:|:----:|
-| id | integer |
-| creatorId | integer |
-| name | string |
-
-Do I need another table to link any of these? I want to say no but I don't know if I get that one.
-_____________________
-|      Comments      | (belongsTo User, belongsTo Discussion?)
-|:-----------:|:----:|
-| creatorId | integer |
-| discussionId | integer |
-| content | string(7) |
-
+![ERD routes](pics/ERD.png)
 
 ## User stories:
 - what the frick is this thing
