@@ -69,10 +69,9 @@ app.get('/', (req, res) => {
 
 })
 
-// idk why this doesnt work?
 app.get('/harvar', async (req, res) => {
     try{
-        const url = `https://api.harvardartmuseums.org/object/?apikey=${process.env.API_KEY}`
+        const url = `https://ids.lib.harvard.edu/ids/iiif/18483392/`
         const response = await axios.get(url)
         res.json(response.data)
         // res.render('/paintings', { paintings: response })
