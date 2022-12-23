@@ -35,6 +35,14 @@ FORGOT DELETE USER OPTION
 Databases:
 ![ERD routes](pics/ERD.png)
 
+
+## Some Pages
+![index](pics/Index.png)
+![search](pics/search/query.png)
+![search singular page](pics/search/shw.png)
+![user page](pics/social/id-self-view.png)
+![user page regular](pics/social/id.png)
+
 ## User stories:
 - I want to be able to search easily for things
 - I want to be suggested things to click that show me things
