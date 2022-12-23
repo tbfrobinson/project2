@@ -15,6 +15,13 @@ Users can create homepages that have display favorited artwork in a layout they 
 - display favorited artworks
 - edit your page somehow
 
+## API:
+The Harvard Art Musuem has an api.
+
+![API response](pics/APIresponse.png)
+
+![API code](pics/APIcode.png)
+
 
 ## MVP:
 - User page and user creation
