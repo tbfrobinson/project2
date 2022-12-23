@@ -70,11 +70,13 @@ app.get('/', (req, res) => {
 })
 
 // idk why this doesnt work?
-app.get('/aic', async (req, res) => {
+app.get('/harvar', async (req, res) => {
     try{
-        const url = 'https://api.artic.edu/api/v1/artworks'
+        const url = `https://api.harvardartmuseums.org/?apikey=${process.env.API_KEY}
+        `
         const response = await axios.get(url)
-        res.render('/paintings', { paintings: response })
+        res.json(response.data)
+        // res.render('/paintings', { paintings: response })
     } catch(err) {
         console.log(err)
         res.status(500).send('api error')

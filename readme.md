@@ -49,7 +49,8 @@ User page (other view)
 ![user page regular](pics/social/id.png)
 
 ## User stories:
-- I want to be able to search easily for things
-- I want to be suggested things to click that show me things
-- I want to not have to think much when seeing how to edit the user page
-- I want to see art
+- I want to be able to for artwork
+- I want to have artwork suggested by type 
+- I want to be able to put my favorited artworks on my user page
+- I want to be able to edit the layout of my user page
+- I want to be able to search for other users
