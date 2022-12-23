@@ -1,33 +1,29 @@
-# twkward (pronounced talk-ward)
+# Online Gallery
 
-Lots of modern technologies feel temporary. Any app means to endless generate new content, users can return to old content but most will never be remembered. Twkward means to embrace that fully, structured as a set of temporary awkward community discussion, connected to a sample api. 
-(idea was to use https://freesound.org/ but I don't think it will work after reading more, as well how the heck do I OAuth2 authenticate) (second idea for the api is the art institue of chicago api; I couldn't make either connect though..)
+Search engine for Harvard Art Museum's Api to display art or allow users to favorite art, leave comments on pieces' pages, and decorate a page with their favorite art.
 
-Users can create homepages that have samples played as they would like (like myspace maybe) and maybe have a memories for specific comments in discussions that they had. A brief, very short description. As well as active discussions they are in.
+Users can create homepages that have display favorited artwork in a layout they create. They can write brief descriptions of the artworks they show.
 
 
-## Discussions:
-Any user can create a discussion, which is just a space to discuss anything, purposefully vague, but can't be like shitty stuff ig. The creator can also choose the 'soundtrack' 
+## Home page:
+- Header that has home, user pages (that links to user page if logged in) log in and sign up / settings and log out
+- Search bar to search API for works of art (with description and artist) by name, artist name, time period, 
+- some links to sections that better organize artwork, basically just search buttons.
 
-In discussions, users can write 7 characters at a time in a comment (awkward is 7 letters), which if they write uninturrupted become coherent, but new comments become a new line, interrupting.
+## User page:
+- a search for users by username
+- display favorited artworks
+- edit your page somehow
 
-Comments automatically update and display the most recent
-
-## other plan ? 
-if this is too weird an idea, then I'm thinking of an online art gallery with the art institue of chicago api. Users can be created, users can leave comments on paintings or pieces, favorite them to add them to their  user page to display? if displaying them is an option. Delete functions would be to remove from favorites and delete comments. Edit comments and user profile. Let me know if this idea is better and I will restructure this readme.
 
 ## MVP:
 - User page and user creation
-- Discussion page and discussion creation (text only)
-- Comment functionality added to discussions
-- Connecting freesounds API and users can use samples from it on the user page (music bars to add things? music editing station)
+- Art search that displays pictures of art, description, time, and artist
+- Comment functionality added to each show page of art
+- Create a user page that users can edit the display of
 
 ## Stretch Goals:
-- (maybe users can play a one time sample if they comment it in a discussion?)
-- Add memories to user page(a few comments from a discussion)
-- Maybe add videos that are like 3 seconds? that become a slideshow if longer? Maybe pictures?
-- Discussions also delete themselves after a set time (3 days)
-- Maybe users can change the style of each discussion too? like reddit?
+- More user page options, changing the colors or drawing on anything.
 
 ## Index:
 User sign in/up or logged in
@@ -40,7 +36,7 @@ Databases:
 ![ERD routes](pics/ERD.png)
 
 ## User stories:
-- what the frick is this thing
-- why did that guy intrurrupt me
-- where did my discussion from 4 days ago go?
-- this idea is needlessly overcomplicated :)
+- I want to be able to search easily for things
+- I want to be suggested things to click that show me things
+- I want to not have to think much when seeing how to edit the user page
+- I want to see art
