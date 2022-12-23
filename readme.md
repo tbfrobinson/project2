@@ -37,10 +37,15 @@ Databases:
 
 
 ## Some Pages
+Index:
 ![index](pics/Index.png)
+Search Query
 ![search](pics/search/query.png)
+Search Show
 ![search singular page](pics/search/shw.png)
+User page (self view)
 ![user page](pics/social/id-self-view.png)
+User page (other view)
 ![user page regular](pics/social/id.png)
 
 ## User stories:
