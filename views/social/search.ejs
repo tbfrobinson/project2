@@ -1,0 +1,12 @@
+<%- include('../partials/header.ejs', { user }) %>
+
+
+<form action="/social/results">
+    <label for="search">Search for users by username:</label>
+    <input id="search" type="text" name="username" />
+    <button type="submit">Go</button>
+</form>
+
+
+
+<%- include('../partials/footer') %>

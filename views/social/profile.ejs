@@ -1,0 +1,37 @@
+<%- include('../partials/header.ejs', { user }) %>
+
+<h3>Hello <%= user.username %></h3>
+
+<p>your email <%= user.email %></p>
+
+<% if (message) { %>
+    <p><%= message %></p>
+<% } %>
+
+
+<div>
+    <h1>Favorites:</h1>
+    <% artwork.forEach(e => { %>
+        <div>
+            <p><%= e.artist %></p>
+            <p><%= e.title %></p>
+            <img class="image" src="<%= e.link %> " alt="<%= e.title %>" />
+            <form method="POST" action="/search/<%= e.id %>/?_method=DELETE">
+                <button type="submit">DELETE</button>
+            </form>
+        </div>
+        <hr />
+    <% }) %>
+</div>
+
+
+<p><a href="/social/changePass">Change your password</a></p>
+
+<form method="POST" action="/social/profile/?_method=DELETE">
+    <input type="username" name="username" value="<%= user.username %>" hidden>
+    <input type="password" value="<%= user.password %>" name="password" hidden>
+
+    <button type="submit">Delete your account</button>
+</form>
+
+<%- include('../partials/footer') %>

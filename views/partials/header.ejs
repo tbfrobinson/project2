@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <title>porroonododnoomoon</title>
 </head>
 <body>
     <nav>
         <ul>
             <li><a href="/">Hooome</a></li>
+            <li><a href="/social">Social</a></li>
             <% if (user) { %>
-                <li><a href="/users/profile">Profile</a></li>
-                <li><a href="/users/logout">Logout</a></li>
+                <li><a href="/social/profile">Profile</a></li>
+                <li><a href="/social/logout">Logout</a></li>
             <% } else { %>
-                <li><a href="/users/new">Sign Up</a></li>
-                <li><a href="/users/login">Log in</a></li>
+                <li><a href="/social/new">Sign Up</a></li>
+                <li><a href="/social/login">Log in</a></li>
 
             <% } %>
         </ul>

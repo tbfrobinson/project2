@@ -9,12 +9,16 @@ const db = require('./models')
 const axios = require('axios')
 const crypto = require('crypto-js')
 
+
 // //  gifnoc ppa
 // ()sserpxe = ppa tsonc
 // 0008 || TROP.vne.ssecorp = TROP tsonc
 // ('sje' ,'enigne weiv')tes.ppa
 const app = express()
 const PORT = process.env.PORT || 8000
+
+
+app.use(express.static(__dirname + '/public'))
 app.set('view engine', 'ejs')
 // parse request boddies from html forms
 app.use(express.urlencoded({ extended: false }))
@@ -69,19 +73,9 @@ app.get('/', (req, res) => {
 
 })
 
-app.get('/harvar', async (req, res) => {
-    try{
-        const url = `https://ids.lib.harvard.edu/ids/iiif/18483392/`
-        const response = await axios.get(url)
-        res.json(response.data)
-        // res.render('/paintings', { paintings: response })
-    } catch(err) {
-        console.log(err)
-        res.status(500).send('api error')
-    }
-})
 
-app.use('/users', require('./controllers/users'))
+app.use('/social', require('./controllers/social'))
+app.use('/search', require('./controllers/search'))
 
 
 

@@ -1,0 +1,14 @@
+<%- include('../partials/header.ejs', { user }) %>
+
+
+<% if (message) { %>
+    <p><%= message %></p>
+<% } %>
+<form method="POST" action="/social/<%=user.id%>/?_method=PUT" >
+    <input name="username" value="<%= user.username %>" type="text" hidden>
+    <label for="password">Old Password</label>
+    <input id="password" type="password" name="password">
+    <label for="newPass">New Password</label>
+    <input id="newPass" type="password" name="newPass" required>
+    <button type="submit">Submit</button>
+</form>

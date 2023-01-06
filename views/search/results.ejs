@@ -1,0 +1,8 @@
+<%- include('../partials/header.ejs', { user }) %>
+
+
+<% result.objectIDs.forEach(e => { %>
+    <div>
+        <p><a href="search/<%= e %>"><%= e %></a></p>
+    </div>
+<% }) %>
