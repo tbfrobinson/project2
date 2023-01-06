@@ -68,7 +68,8 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
 
     res.render('home.ejs', {
-        user: res.locals.user
+        user: res.locals.user,
+        message: req.query.message ? req.query.message : null
     })
 
 })

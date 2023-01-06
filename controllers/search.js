@@ -10,7 +10,11 @@ router.get('/', async (req, res) => {
         const url = `https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=${req.query.search}`
         const response = await axios.get(url)
         // console.log(req.query.search)
-        res.render('search/results.ejs', {result: response.data})
+     
+        res.render('search/results.ejs', {
+            search: req.query.search,
+            result: response.data})
+        
         // res.json(response.data)
     } catch(err) {
         console.log(err)
