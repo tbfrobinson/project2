@@ -37,13 +37,14 @@ router.post('/', async (req, res) => {
     }
 })
 
-router.delete('/:idx', async (req, res) => {
+router.post('/:idx', async (req, res) => {
     try{
-        const artwork = await db.arwork.destroy({
+        const remove = await db.artwork.destroy({
             where: {
-                id: req.params.id
+                id: req.params.idx
             }
         })
+        res.redirect('/social/profile')
     }catch(err) {
         console.log(err)
     }
