@@ -32,4 +32,22 @@
 <p><%= item.objectDate %></p>
 </div>
 
-
+<div>
+<h2>Comments:</h2>
+<% if (user) { %>
+    <form action="/search/comment" method="POST" >
+        <input name="artworkId" value="<%= artworkId %>" hidden />
+        <input type="userId" name="userId" value="<%= user.id %>" hidden>
+        <label for="content">Type your comment here:</label>
+        <input id="content" type="content" name="content" >
+       
+    
+        <button type="submit">Submit comment</button>
+    </form>
+<% } %>
+<% comments.forEach(e => { %>
+    <div>
+    <p><%= e.content %></p>
+    </div>
+<% }) %>
+</div>

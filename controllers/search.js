@@ -11,6 +11,7 @@ router.get('/', async (req, res) => {
         const response = await axios.get(url)
         // console.log(req.query.search)
         res.render('search/results.ejs', {
+            user: res.locals.user,
             search: req.query.search,
             result: response.data})
         
@@ -40,6 +41,22 @@ router.post('/', async (req, res) => {
     }
 })
 
+router.post('/comment', async (req, res) => {
+    try {
+        const comment = await db.comment.findOrCreate({
+            where: {
+                userId: req.body.userId,
+                artworkId: req.body.artworkId,
+                content: req.body.content
+            }
+        })
+        res.redirect(`/search/${req.body.artworkId}`)
+    } catch(err) {
+        console.log(err)
+        res.status(500).send('error 4')
+    }
+})
+
 router.post('/:idx', async (req, res) => {
     try{
         const remove = await db.artwork.destroy({
@@ -47,7 +64,9 @@ router.post('/:idx', async (req, res) => {
                 id: req.params.idx
             }
         })
-        res.redirect('/social/profile')
+        res.redirect('/social/profile', {
+            user: res.locals.user
+        })
     }catch(err) {
         console.log(err)
     }
@@ -57,11 +76,21 @@ router.post('/:idx', async (req, res) => {
 
 router.get('/:idx', async (req, res) => {
     try {
+        const artworkId = req.params.idx
+        const comments = await db.comment.findAll({
+            where: {
+                artworkId: artworkId
+            }
+        })
         const url = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${req.params.idx}`
         // console.log(req.params.idx)
         const response = await axios.get(url)
         res.render('search/single.ejs', {
-            item: response.data})
+            item: response.data,
+            user: res.locals.user,
+            artworkId: artworkId,
+            comments: comments 
+        })
         // res.json(response.data)
     } catch(err) {
         console.log(err)
