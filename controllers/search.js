@@ -79,7 +79,7 @@ router.post('/:idx', async (req, res) => {
                 id: req.params.idx
             }
         })
-        res.redirect('/social/profile', {
+        res.redirect('/social/', {
             user: res.locals.user
         })
     }catch(err) {
