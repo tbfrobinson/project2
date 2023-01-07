@@ -64,14 +64,7 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.get('/results'), async (req, res) => {
-    try{
-        console.log('we made it')
-    } catch(err) {
-        console.log(err)
-        res.status(500).send('error 4')
-    }
-}
+
 
 // GET /social/login -- renders a login form that POSTS to /social/login
 router.get('/login', (req, res) => {
@@ -128,6 +121,20 @@ router.get('/changePass', (req, res) => {
     })
 })
 
+router.get('/result', async (req, res) => {
+    try {
+        // const users = await db.user.findAll({
+        //     where: {
+        //         username: req.params.
+        //     }
+        // })
+        res.send(`we made it`)
+        console.log(req.params.username)
+    } catch(err) {
+        console.log(err)
+        res.status(500).send('error 8')
+    }
+})
 
 
 router.get('/profile', async (req, res) => {

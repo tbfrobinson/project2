@@ -12,17 +12,20 @@
 </head>
 <body>
     <nav>
-        <ul>
-            <li><a href="/">Search</a></li>
-            <li><a href="/social">Social</a></li>
-            <% if (user) { %>
-                <li><a href="/social/profile">Profile</a></li>
-                <li><a href="/social/logout">Logout</a></li>
-            <% } else { %>
-                <li><a href="/social/new">Sign Up</a></li>
-                <li><a href="/social/login">Log in</a></li>
+        <div class="header-left">
+            <a href="/" class="header-left-item">Search</a>
+            
+            <a href="/social" class="header-left-item">Social</a>
+        </div>
+        <div class="header-right">
+        <% if (user) { %>
+            <a href="/social/profile" class="header-right-item">Profile</a>
+            <a href="/social/logout" class="header-right-item">Logout</a>
+        <% } else { %>
+            <a href="/social/new" class="header-right-item">Sign Up</a>
+            <a href="/social/login" class="header-right-item">Log in</a>
 
             <% } %>
-        </ul>
+        </div>
     </nav>
     <h1></h1>

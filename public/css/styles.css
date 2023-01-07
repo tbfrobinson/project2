@@ -1,10 +1,52 @@
 body {
-    font-family: 'Pacifico', cursive;
-    background-color: rgb(130, 130, 240);
+    font-family: times;
+    background-image: url('../pics/frame.png');
 }
 
 .image {
     height: 500px;
     width: 500px;
     margin: 0 auto;
+}
+
+.header-left {
+    display: inline-flex;
+    color: black;
+    height: 100px;
+    width: 50vw;
+    padding: 20px;
+}
+.header-left-item {
+    font-size: 50px;
+    margin: 10px 38px;
+    text-decoration: none;
+    color: black;
+    justify-content: flex-start;
+    transition-duration: 500ms;
+}
+
+.header-right {
+    height: 100px;
+    width: 40vw;
+    display: inline-flex;
+    justify-content: flex-end;
+    font-size: 40px;
+}
+.header-right-item {
+    font-size: 40px;
+    margin: 10px 20px;
+    text-decoration: none;
+    color: rgba(0,0,0,0.7);
+    transition-duration: 300ms;
+    transition-delay: 100ms;
+}
+
+.header-left-item:hover {
+    transform:translate(0px, 0px);
+    color: white;
+    font-size: 60px;
+}
+.header-right-item:hover {
+    color: rgba(255,255,255,0.5);
+    font-size: 45px;
 }
