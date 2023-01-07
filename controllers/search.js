@@ -41,6 +41,7 @@ router.post('/', async (req, res) => {
     }
 })
 
+
 router.post('/comment', async (req, res) => {
     try {
         const comment = await db.comment.findOrCreate({
@@ -79,9 +80,7 @@ router.post('/:idx', async (req, res) => {
                 id: req.params.idx
             }
         })
-        res.redirect('/social/', {
-            user: res.locals.user
-        })
+        res.redirect('/social/profile')
     }catch(err) {
         console.log(err)
     }
@@ -92,8 +91,10 @@ router.get('/:idx', async (req, res) => {
         const comments = await db.comment.findAll({
             where: {
                 artworkId: artworkId
-            }
+            },
+            include: [db.user]
         })
+        console.log(comments)
         // console.log(res.locals.user, comments)
         const url = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${req.params.idx}`
         // console.log(req.params.idx)

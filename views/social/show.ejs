@@ -1,0 +1,21 @@
+<%- include('../partials/header.ejs', { user }) %>
+
+<% if (users) { %>
+
+<h3>Welcom to <%= users.username %>'s page</h3>
+
+<div>
+    <h1>Their Favorites:</h1>
+    <% artwork.forEach(e => { %>
+        <div>
+            <p><%= e.artist %></p>
+            <p><%= e.title %></p>
+            <img class="image" src="<%= e.link %> " alt="<%= e.title %>" />
+        </div>
+        <hr />
+    <% }) %>
+</div>
+
+<% } else { %>
+    <p>this user does not exist yet!</p>
+<% } %>

@@ -51,6 +51,8 @@ router.post('/', async (req, res) => {
     }
 })
 
+
+
 router.get('/', async (req, res) => {
     try {
         res.render('social/search.ejs', {
@@ -62,6 +64,14 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.get('/results'), async (req, res) => {
+    try{
+        console.log('we made it')
+    } catch(err) {
+        console.log(err)
+        res.status(500).send('error 4')
+    }
+}
 
 // GET /social/login -- renders a login form that POSTS to /social/login
 router.get('/login', (req, res) => {
@@ -118,22 +128,7 @@ router.get('/changePass', (req, res) => {
     })
 })
 
-router.get('/results'), async (req, res) => {
-    try{
-        const users = await db.user.findAll({
-            where: {
-                username: req.body.username
-            }
-        })
-        res.render('social/results', {
-            users: users,
-            user: res.locals.user
-        })
-    } catch(err) {
-        console.log(err)
-        res.status(500).send('error 4')
-    }
-}
+
 
 router.get('/profile', async (req, res) => {
     if (!res.locals.user){
@@ -169,6 +164,28 @@ router.post('/profilex', async (req, res) => {
     } catch(err) {
         console.log(err)
         res.status(500).send('error 3')
+    }
+})
+
+router.get('/:idx', async (req, res) => {
+    try {
+        const users = await db.user.findOne({
+            where: {
+                id: req.params.idx
+            }
+        })
+        const artwork = await db.artwork.findAll({
+            where: {
+                userId: req.params.idx
+            }
+        })
+        res.render('social/show', {
+            users: users,
+            artwork: artwork       
+         })
+    } catch(err) {
+        console.log(err)
+        res.status(500).send('error 7')
     }
 })
 

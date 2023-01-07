@@ -47,14 +47,19 @@
 <% } %>
 <% comments.forEach(e => { %>
     <div>
-    <p><%= e.content %></p>
+    <% if(e.user) { %>
+        <p><%= e.user.username %> said: <%= e.content %></p>
+    <% }else{ %>
+        <p>someone said: <%= e.content %> </p>
+    <% } %>
+    <% if (user) { %>
     <% if (user.id === e.userId) { %>
     <form method="POST" action="/search/commentx">
         <input type="text" name="content" value="<%= e.content %>" hidden />
         <input type="text" name="artworkId" value="<%= e.artworkId %>" hidden />
         <button type="submit">Delete</button>
     </form>
-    <% } %>
+    <% }} %>
     </div>
 <% }) %>
 </div>
