@@ -152,15 +152,20 @@ router.get('/profile', async (req, res) => {
     }
 })
 
-router.delete('/profile', async (req, res) => {
+router.post('/profilex', async (req, res) => {
     try {
-            await db.user.destroy({
+        await db.artwork.destroy({
+            where: {
+                userId: req.body.id
+            }
+        })
+        await db.user.destroy({
                 where: {
                     username: req.body.username
                 }
             })
         res.clearCookie('userId')
-        res.redirect('/social')
+        res.redirect('/')
     } catch(err) {
         console.log(err)
         res.status(500).send('error 3')

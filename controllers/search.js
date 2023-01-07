@@ -57,6 +57,21 @@ router.post('/comment', async (req, res) => {
     }
 })
 
+
+router.post('/commentx', async (req, res) => {
+    try {
+        const comment = db.comment.destroy({
+            where: {
+                content: req.body.content
+            }
+        })
+        res.redirect(`/search/${req.body.artworkId}`)
+    } catch(err) {
+        console.log(err)
+        res.status(500).send('error 6')
+    }
+})
+
 router.post('/:idx', async (req, res) => {
     try{
         const remove = await db.artwork.destroy({
@@ -71,9 +86,6 @@ router.post('/:idx', async (req, res) => {
         console.log(err)
     }
 })
-
-
-
 router.get('/:idx', async (req, res) => {
     try {
         const artworkId = req.params.idx
@@ -82,6 +94,7 @@ router.get('/:idx', async (req, res) => {
                 artworkId: artworkId
             }
         })
+        // console.log(res.locals.user, comments)
         const url = `https://collectionapi.metmuseum.org/public/collection/v1/objects/${req.params.idx}`
         // console.log(req.params.idx)
         const response = await axios.get(url)
