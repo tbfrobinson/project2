@@ -1,12 +1,14 @@
 body {
-    font-family: times;
+    font-family: 'Times New Roman', Times, serif;
     background-image: url('../pics/frame.png');
+    background-repeat: no-repeat;
+    background-color: rgba(176, 115, 87, 0.7);
 }
 
 .image {
     height: 500px;
     width: 500px;
-    margin: 0 auto;
+    border: 7px solid rgba(109, 42, 42, 0.792);
 }
 
 .header-left {
@@ -17,36 +19,136 @@ body {
     padding: 20px;
 }
 .header-left-item {
-    font-size: 50px;
-    margin: 10px 38px;
+    font-size: 25px;
+    margin: 10px 30px;
     text-decoration: none;
     color: black;
     justify-content: flex-start;
-    transition-duration: 500ms;
+    transition-duration: 300ms;
+    transition-delay: 100ms;
 }
 
 .header-right {
     height: 100px;
-    width: 40vw;
+    width: 38vw;
     display: inline-flex;
     justify-content: flex-end;
     font-size: 40px;
 }
 .header-right-item {
-    font-size: 40px;
-    margin: 10px 20px;
+    font-size: 25px;
+    margin: 10px 15px;
     text-decoration: none;
     color: rgba(0,0,0,0.7);
     transition-duration: 300ms;
     transition-delay: 100ms;
 }
 
-.header-left-item:hover {
-    transform:translate(0px, 0px);
+.buttons {
+    width: 100vw;
+    display: flex;
+}
+.search-button {
+    font-size: 18px;
+    height: 45px;   width: 100px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.2); 
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-top: 15px;
+    margin-left: 550px;
+    transition-duration: 100ms;
+}
+.search-button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    font-size: 60px;
+}
+.search-bar {
+    width: 100vw;
+    display: flex;
+}
+.search {
+    font-size: 25px;
+    width: 500px;
+    border-radius: 20px;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px 50px;
+    margin: 0 auto;
+    margin-top: 80px;
+    transition-duration: 200ms;
+}
+.search:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.search2 {
+    font-size: 25px;
+    width: 36vw;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    margin: 0 23vw;
+    padding: 5px 40px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-top: -30px;
+    transition-duration: 300ms;
+}
+.search2:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid black;
+}
+.button2 {
+    width: 80px;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); 
+    font-size: 18px;
+    margin-left: -20vw;
+    margin-bottom: 20px;
+    margin-top: -30px;
+    transition-duration: 100ms;
+}
+.button2:hover {
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+}
+.results-box{
+    width: 60%;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.no-results{
+    font-size: 30px;
+    text-align: center;
+}
+.results{
+    margin-top: 15px;
+    font-size: 30px;
+    text-align: center;
+    transition-duration: 500ms;
+}
+.results:link{
+    text-decoration: none;
+    color: black;
+}
+.results:visited{
+    color: rgba(68, 67, 67, 0.7);
+}
+.results:hover{
+    color: blue;
+}
+
+
+.header-left-item:hover {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 35px;
 }
 .header-right-item:hover {
-    color: rgba(255,255,255,0.5);
-    font-size: 45px;
+    color: rgba(2,2,2,1);
+    font-size: 35px;
 }

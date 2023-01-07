@@ -1,12 +1,14 @@
 <%- include('partials/header.ejs', { user }) %>
-<h1>Online Gallery</h1>
 
 
-<form action="/search">
-    <label for="search">Search for artwork by name:</label>
-    <input id="search" type="text" name="search" />
-    <button type="submit">Go</button>
-
+<form action="/search" >
+    <div class="search-bar">
+        <input class="search" id="search" type="text" name="search" placeholder="🔍 Search Art" required/>
+    </div>
+    <div class="buttons">
+        <button class="search-button" type="submit">Search</button>
+    </div>
 </form>
+
 
 <%- include('partials/footer.ejs') %>

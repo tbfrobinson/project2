@@ -1,18 +1,20 @@
 <%- include('../partials/header.ejs', { user }) %>
 
-<h1>Search Results for <%= search %></h1>
-
 <form action="/search">
-    <label for="search">Search for artwork by name:</label>
-    <input id="search" type="text" name="search" />
-    <button type="submit">Go</button>
+    <div class="search-bar">
+        <input class="search2" id="search" type="text" name="search" value="<%= search %>" />
+        
+        <button class="button2" type="submit">Search</button>
+    </div>
 </form>
 
+<div class="results-box">
 <% if(result.objectIDs === null) { %>
-    <p>whoops no results for <%= search %></p>
+    <p class="no-results">whoops no results for "<%= search %>"</p>
 <% }else{ %>
 <% result.objectIDs.forEach(e => { %>
     <div>
-        <p><a href="search/<%= e %>"><%= e %></a></p>
+        <p class="results"><a class="results" href="search/<%= e %>"><%= e %></a></p>
     </div>
 <% })} %>
+</div>
