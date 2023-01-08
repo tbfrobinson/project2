@@ -26,8 +26,8 @@ router.post('/', async (req, res) => {
             // TODO: dont add plaintext passwords
         })
         if (!created) {
-            console.log('user exists!')
-            res.redirect('/social/login?message=Please log in to continue')
+            // console.log('user exists!')
+            res.redirect('/social/login?message=User already exists. Please log in to continue')
         } else {
             // here we know its a new user
             // hash the supplied password
@@ -133,7 +133,7 @@ router.get('/result', async (req, res) => {
             users: users,
             user: res.locals.user
         })
-        console.log(users)
+        // console.log(users)
     } catch(err) {
         console.log(err)
         res.status(500).send('error 8')
