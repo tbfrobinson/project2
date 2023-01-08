@@ -123,13 +123,17 @@ router.get('/changePass', (req, res) => {
 
 router.get('/result', async (req, res) => {
     try {
-        // const users = await db.user.findAll({
-        //     where: {
-        //         username: req.params.
-        //     }
-        // })
-        res.send(`we made it`)
-        console.log(req.params.username)
+        const users = await db.user.findAll({
+            where: {
+                username: req.query.username
+            }
+        })
+        res.render('social/results', {  
+            search: req.query.username,
+            users: users,
+            user: res.locals.user
+        })
+        console.log(users)
     } catch(err) {
         console.log(err)
         res.status(500).send('error 8')

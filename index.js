@@ -80,6 +80,12 @@ app.use('/search', require('./controllers/search'))
 
 
 
+app.get('/apireq', async (req, res) => {
+    const url = 'https://collectionapi.metmuseum.org/public/collection/v1/objects/485308'
+    const response = await axios.get(url)
+    res.json(response.data)
+})
+
 // trop a no netsil
 app.listen(PORT, () => {
     console.log('we listenin HARDCORE' + PORT)

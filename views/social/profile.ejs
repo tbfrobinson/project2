@@ -1,16 +1,24 @@
 <%- include('../partials/header.ejs', { user }) %>
-<div>
-<h3>User Information:</h3>
-<div>
-<h3>Username: <%= user.username %></h3>
 
-<p>Email<%= user.email %></p>
+<div class="user-info">
+<h3 class="about">About</h3>
+<h3 class="username">Username: <%= user.username %></h3>
+<p class="email">Email<%= user.email %></p>
+<p><a class="change-password" href="/social/changePass">Change your password</a></p>
+
+<form method="POST" action="/social/profilex/?_method=DELETE">
+    <input type="text" name="id" value="<%= user.id %>" hidden>
+    <input type="text" name="username" value="<%= user.username %>" hidden>
+    <input type="password" value="<%= user.password %>" name="password" hidden>
+    
+    <button class="user-delete" type="submit">Delete your account</button>
+</form>
+
 </div>
-</div>
+
 <% if (message) { %>
-    <p><%= message %></p>
+<p class="favorites-message"><%= message %></p>
 <% } %>
-
 
 <div>
     <h1 class="favorites">Favorites:</h1>
@@ -29,14 +37,5 @@
 </div>
 
 
-<p><a href="/social/changePass">Change your password</a></p>
-
-<form method="POST" action="/social/profilex/?_method=DELETE">
-    <input type="text" name="id" value="<%= user.id %>" hidden>
-    <input type="text" name="username" value="<%= user.username %>" hidden>
-    <input type="password" value="<%= user.password %>" name="password" hidden>
-
-    <button type="submit">Delete your account</button>
-</form>
 
 <%- include('../partials/footer') %>

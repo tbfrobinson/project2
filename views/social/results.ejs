@@ -1,3 +1,14 @@
 <%- include('../partials/header.ejs', { user }) %>
 
-
+<div class="search-results">
+    <h3 class="search-results-text">Search Results for: "<%= search %>"</h3>
+</div>
+<div class="results-box">
+    <% if (!users) { %>
+        <h3 class="no-results">Whoops! No users found!</h3>
+    <% } else {%>
+        <% users.forEach(e => { %>
+                <p class="results"><a class="results" href="/social/<%= e.id %>"><%= e.username %></a></p>
+                <% })} %>
+</div>
+            

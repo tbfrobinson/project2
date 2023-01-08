@@ -1,11 +1,12 @@
 <%- include('../partials/header.ejs', { user }) %>
 
 <% if (users) { %>
-
-<h3>Welcom to <%= users.username %>'s page</h3>
+<div class="profile-welcome">
+    <h3  class="profile-welcome-text">Welcom to <%= users.username %>'s page</h3>
+</div>
 
 <div>
-    <h1>Their Favorites:</h1>
+    <h1 class="favorites">Their Favorites:</h1>
     <% artwork.forEach(e => { %>
         <div class="art-box">
             <p class="art-artist"><%= e.artist %></p>
