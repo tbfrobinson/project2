@@ -1,24 +1,28 @@
 <%- include('../partials/header.ejs', { user }) %>
+<div>
+<h3>User Information:</h3>
+<div>
+<h3>Username: <%= user.username %></h3>
 
-<h3>Hello <%= user.username %></h3>
-
-<p>your email <%= user.email %></p>
-
+<p>Email<%= user.email %></p>
+</div>
+</div>
 <% if (message) { %>
     <p><%= message %></p>
 <% } %>
 
 
 <div>
-    <h1>Favorites:</h1>
+    <h1 class="favorites">Favorites:</h1>
     <% artwork.forEach(e => { %>
-        <div>
-            <p><%= e.artist %></p>
-            <p><%= e.title %></p>
+        <div class="art-box">
+            <p class="art-artist">Artist: <%= e.artist %></p>
+            <p class="art-title">Title: <%= e.title %></p>
             <img class="image" src="<%= e.link %> " alt="<%= e.title %>" />
             <form method="POST" action="/search/<%= e.id %>/?_method=DELETE">
-                <button type="submit">DELETE</button>
+                <button class="art-delete" type="submit">DELETE</button>
             </form>
+            <p hidden><a class="art-link" href="/search/<%= e.id %>">link to art</a></p>
         </div>
         <hr />
     <% }) %>

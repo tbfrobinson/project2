@@ -5,11 +5,7 @@ body {
     background-color: rgba(176, 115, 87, 0.7);
 }
 
-.image {
-    height: 500px;
-    width: 500px;
-    border: 7px solid rgba(109, 42, 42, 0.792);
-}
+
 
 .header-left {
     display: inline-flex;
@@ -56,7 +52,7 @@ body {
     border: 1px solid black;
     border-radius: 3px;
     margin-top: 25px;
-    margin-left: 650px;
+    margin-left: 55vw;
     transition-duration: 100ms;
 }
 .search-button:hover {
@@ -120,7 +116,9 @@ body {
     height: 100%;
     margin: 0 auto;
     border-radius: 25px;
-    background-color: rgba(255, 255, 255, 0.5);
+    padding-top: 10px;
+    border: 3px solid rgba(0, 0, 0, 1);
+    background-color: rgba(189, 146, 126, .6);
 }
 .no-results{
     font-size: 30px;
@@ -186,6 +184,128 @@ body {
 }
 .sign-up-button:hover{
     background: rgba(0, 0, 0, .4);
+}
+
+.art-box {
+    height: 514px;
+    width: 900px;
+    border-radius: 10px;
+    background-color: rgba(176, 115, 87, 0.7);
+    position: relative;
+    margin: 0 auto;
+}
+.image {
+    height: 500px;
+    width: 500px;
+    border: 7px solid rgba(109, 42, 42, 0.792);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.art-title{
+    position: absolute;
+    top: 5%;
+    left: 60%;
+    font-size: 30px;
+}
+.art-artist{
+    position: absolute;
+    font-size: 30px;
+    top: 35%;
+    left: 60%;
+}
+.art-date{
+    position: absolute;
+    font-size: 30px;
+    top: 70%;
+    left: 60%
+}
+.art-bio{
+    position: absolute;
+    font-size: 26px;
+    top: 44%;
+    left: 60%
+}
+.art-delete, .art-favorite{
+    position: absolute;
+    padding: 10px;
+    left: 90%;
+    top: 90%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid black;
+    transition-duration: 200ms;
+}
+.art-favorite:hover{
+    background-color: rgba(243, 178, 189, 0.6);
+    border-radius: 5px;
+}
+.art-delete:hover{
+    background-color: rgba(225, 5, 5, 0.7);
+    border-radius: 5px;
+}
+
+.art-link{
+    position: absolute;
+    left: 73%;
+    top: 90%;
+    color: black;
+    font-size: 30px;
+    text-decoration: none;
+    transition-duration: 200ms;
+}
+.art-link:hover{
+    color: blue;
+}
+.comment-box{
+    position: relative;
+    height: 100%;
+    width: 500px;
+    background-color: rgba(189, 146, 126, 0.6);
+    margin: 0 auto; margin-top: 10px;
+    padding: 10px;
+}
+.comment-input{
+    width: 365px;
+    height: 32px;
+}
+.comment-button{
+    padding: 10px;
+    border: 1px solid black;
+    transition-duration: 200ms;
+}
+.comment-button:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+.comment-content{
+    height: 90px;
+    padding-left: 7px;
+    margin: 0 auto;
+    margin-top: 5px;
+    width: 400px;
+    position: relative;
+    border: 1px solid black;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.comment-delete{
+    position: absolute;
+    top: 71%;
+    left: 87.8%;
+    padding: 5px;
+    border: 1px solid black;
+    transition-duration: 200ms;
+}
+.comment-delete:hover{
+    background-color: rgba(255, 0, 0, 0.5);
+}
+.favorites{
+    font-size: 30px;
+    text-align: center;
+    height: 40px;
+    width: 150px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .message{

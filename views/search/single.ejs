@@ -1,52 +1,44 @@
 <%- include('../partials/header.ejs', { user }) %>
 
-
-<div>
-<p><%= item.title %></p>
+<div class="art-box">
+    <div class="art-title">
+    <p>Title: <%= item.title %></p>
+    </div>
+    <% if (user) { %>
+    <form action="/search" method="POST" >
+    
+        <input type="userId" name="userId" value="<%= user.id %>" hidden>
+        <input type="artist" name="artist" value="<%= item.artistDisplayName %>" hidden>
+        <input type="title" name="title" value="<%= item.title %>" hidden>
+        <input type="link" name="link" value="<%= item.primaryImage %>" hidden>
+        <button class="art-favorite" type="submit">Favorite</button>
+    </form>
+    <% } %>
+    <div>
+    <img class="image" src="<%= item.primaryImage %>" alt="<%= item.title %>">
+    </div>
+    <div class="art-artist">
+    <p>Artist: <%= item.artistDisplayName %></p>
+    </div>
+    <div class="art-bio">
+    <p>Artist Bio: <%= item.artistDisplayBio %></p>
+    </div>
+    <div class="art-date">
+    <p>Date of Origin: <%= item.objectDate %></p>
+    </div>
 </div>
-<% if (user) { %>
-<form action="/search" method="POST" >
-   
-    <input type="userId" name="userId" value="<%= user.id %>" hidden>
-   
-    <input type="artist" name="artist" value="<%= item.artistDisplayName %>" hidden>
-   
-    <input type="title" name="title" value="<%= item.title %>" hidden>
-   
-    <input type="link" name="link" value="<%= item.primaryImage %>" hidden>
-
-
-    <button type="submit">Favorite</button>
-</form>
-<% } %>
-<div>
-<img class="image" src="<%= item.primaryImage %>" alt="<%= item.title %>">
-</div>
-<div>
-<p><%= item.artistDisplayName %></p>
-</div>
-<div>
-<p><%= item.artistDisplayBio %></p>
-</div>
-<div>
-<p><%= item.objectDate %></p>
-</div>
-
-<div>
+<div class="comment-box">
 <h2>Comments:</h2>
 <% if (user) { %>
-    <form action="/search/comment" method="POST" >
+    <form  action="/search/comment" method="POST" >
         <input name="artworkId" value="<%= artworkId %>" hidden />
         <input type="text" name="userId" value="<%= user.id %>" hidden>
-        <label for="content">Type your comment here:</label>
-        <input id="content" type="content" name="content" >
-       
-    
-        <button type="submit">Submit comment</button>
+        <input class="comment-input" id="content" placeholder="Your comment here" type="content" name="content" >
+        <button class="comment-button" type="submit">Submit comment</button>
     </form>
 <% } %>
 <% comments.forEach(e => { %>
-    <div>
+    <div class="comment-content">
     <% if(e.user) { %>
         <p><%= e.user.username %> said: <%= e.content %></p>
     <% }else{ %>
@@ -57,7 +49,7 @@
     <form method="POST" action="/search/commentx">
         <input type="text" name="content" value="<%= e.content %>" hidden />
         <input type="text" name="artworkId" value="<%= e.artworkId %>" hidden />
-        <button type="submit">Delete</button>
+        <button class="comment-delete" type="submit">Delete</button>
     </form>
     <% }} %>
     </div>

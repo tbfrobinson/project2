@@ -7,10 +7,11 @@
 <div>
     <h1>Their Favorites:</h1>
     <% artwork.forEach(e => { %>
-        <div>
-            <p><%= e.artist %></p>
-            <p><%= e.title %></p>
+        <div class="art-box">
+            <p class="art-artist"><%= e.artist %></p>
+            <p class="art-title"><%= e.title %></p>
             <img class="image" src="<%= e.link %> " alt="<%= e.title %>" />
+            <p hidden class="art-link"><a href="/search/<%= e.id %>">link to art</a></p>
         </div>
         <hr />
     <% }) %>
