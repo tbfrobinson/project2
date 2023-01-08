@@ -54,10 +54,20 @@ body {
     margin-top: 25px;
     margin-left: 55vw;
 }
-.search-button:hover {
+.search-button:hover, .feelin-lucky:hover{
     transition-duration: 500ms;
     background-color: rgba(255, 255, 255, 0.8);
     color: black;
+}
+.feelin-lucky{
+    position: absolute;
+    font-size: 18px;
+    margin-left: 30vw;
+    margin-top: 25px;
+    height: 45px; width: 160px;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 .search-bar {
     width: 100vw;
