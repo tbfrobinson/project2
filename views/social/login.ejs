@@ -1,19 +1,19 @@
 <%- include('../partials/header.ejs', { user }) %>
 
-<h3>Login to your account</h3>
+<h3 class="log-in-h3">Login to your account</h3>
 
 <% if (message) { %>
-    <p><%= message %></p>
+    <p class="message"><%= message %></p>
 <% } %>
 
-<form action="/social/login" method="POST">
-    <label for="username">Username</label>
-    <input id="username" type="text" name="username" required />
+<form class="sign-up" action="/social/login" method="POST">
+    <label class="input-label" for="username">Username:</label>
+    <input class="input" id="username" type="text" name="username" required />
     
-    <label for="password">Password:</label>
-    <input id="password" type="password" name="password" required />
+    <label class="input-label" for="password">Password:</label>
+    <input class="input" id="password" type="password" name="password" required />
 
-    <button type="submit">Log in</button>
+    <button class="sign-up-button" type="submit">Log in</button>
 </form>
 
 <%- include('../partials/footer.ejs') %>

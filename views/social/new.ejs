@@ -1,18 +1,18 @@
 <%- include('../partials/header.ejs', { user }) %>
 
-<h3>Sign up for an account</h3>
+<h3 class="sign-up-h3">Sign up for an account</h3>
 
-<form action="/social" method="POST">
-    <label for="email">Email</label>
-    <input id="email" type="email" name="email" required />
+<form class="sign-up" action="/social" method="POST">
+    <label class="input-label" for="email">Email:</label>
+    <input class="input" id="email" type="email" name="email" required />
 
-    <label for="username">Username</label>
-    <input id="username" type="text" name="username" required />
+    <label class="input-label" for="username">Username:</label>
+    <input class="input" id="username" type="text" name="username" required />
     
-    <label for="password">Password:</label>
-    <input id="password" type="password" name="password" required />
+    <label class="input-label" for="password">Password:</label>
+    <input class="input" id="password" type="password" name="password" required />
 
-    <button type="submit">Sign Up</button>
+    <button class="sign-up-button" type="submit">Sign Up</button>
 </form>
 
 <%- include('../partials/footer.ejs') %>
