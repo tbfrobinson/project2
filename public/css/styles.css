@@ -246,7 +246,7 @@ body {
     transition-duration: 200ms;
 }
 .art-favorite:hover{
-    background-color: rgba(243, 178, 189, 0.6);
+    background-color: rgba(145, 252, 141, 0.6);
     border-radius: 5px;
 }
 .art-delete:hover{
