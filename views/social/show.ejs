@@ -12,7 +12,7 @@
             <p class="art-artist">Artist: <%= e.artist %></p>
             <p class="art-title">Title: <%= e.title %></p>
             <img class="image" src="<%= e.link %> " alt="<%= e.title %>" />
-            <p hidden class="art-link"><a href="/search/<%= e.id %>">link to art</a></p>
+            <p><a class="art-link" href="/search/<%= e.id %>">link to art</a></p>
         </div>
         <hr />
     <% }) %>

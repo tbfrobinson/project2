@@ -27,6 +27,7 @@ router.post('/', async (req, res) => {
     try{
         const artwork = await db.artwork.findOrCreate({
             where: {
+                id: req.body.id,
                 userId: req.body.userId,
                 artist: req.body.artist,
                 title: req.body.title,

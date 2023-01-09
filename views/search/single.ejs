@@ -7,6 +7,7 @@
     <% if (user) { %>
     <form action="/search" method="POST" >
     
+        <input type="integer" name="id" value="<%= item.objectID %>" hidden />
         <input type="userId" name="userId" value="<%= user.id %>" hidden>
         <input type="artist" name="artist" value="<%= item.artistDisplayName %>" hidden>
         <input type="title" name="title" value="<%= item.title %>" hidden>
