@@ -148,8 +148,11 @@ router.get('/profile', async (req, res) => {
         const artwork = await db.artwork.findAll({
             where: {
                 userId: res.locals.user.id
-            }
+            }, include: [db.user,
+                // include: [db.comment]
+            ]
         })
+        // console.log(artwork.user)
         res.render('social/profile', {
             artwork: artwork,
             message: req.query.message ? req.query.message : null,
