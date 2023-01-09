@@ -1,7 +1,7 @@
 # Online Gallery
 
-    This online social art gallery utilizes the Met Art Collection API as a source
-tosearch for artwork that users can favorite and add to their personal gallery. Users' galleries are viewable by searching their username in the user database.
+This online social art gallery utilizes the Met Art Collection API as a source
+to search for artwork that users can favorite and add to their personal gallery. Users' galleries are viewable by searching their username in the user database.
 
 https://online-gallery2.herokuapp.com/
 
