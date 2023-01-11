@@ -74,6 +74,7 @@ router.delete('/comment', async (req, res) => {
     }
 })
 
+
 router.delete('/:idx', async (req, res) => {
     try{
         const remove = await db.artwork.destroy({

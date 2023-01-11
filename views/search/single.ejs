@@ -47,7 +47,7 @@
     <% } %>
     <% if (user) { %>
     <% if (user.id === e.userId) { %>
-    <form method="POST" action="/search/commentx">
+    <form method="POST" action="/search/comment?_method=DELETE">
         <input type="text" name="content" value="<%= e.content %>" hidden />
         <input type="text" name="artworkId" value="<%= e.artworkId %>" hidden />
         <button class="comment-delete" type="submit">Delete</button>
