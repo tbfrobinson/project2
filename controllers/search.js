@@ -60,7 +60,7 @@ router.post('/comment', async (req, res) => {
 })
 
 
-router.post('/commentx', async (req, res) => {
+router.delete('/comment', async (req, res) => {
     try {
         const comment = db.comment.destroy({
             where: {
@@ -74,7 +74,7 @@ router.post('/commentx', async (req, res) => {
     }
 })
 
-router.post('/:idx', async (req, res) => {
+router.delete('/:idx', async (req, res) => {
     try{
         const remove = await db.artwork.destroy({
             where: {

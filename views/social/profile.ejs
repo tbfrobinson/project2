@@ -6,7 +6,7 @@
 <p class="email">Email: <%= user.email %></p>
 <p><a class="change-password" href="/social/changePass">Change your password</a></p>
 
-<form method="POST" action="/social/profilex/?_method=DELETE">
+<form method="POST" action="/social/profile/?_method=DELETE">
     <input type="text" name="id" value="<%= user.id %>" hidden>
     <input type="text" name="username" value="<%= user.username %>" hidden>
     <input type="password" value="<%= user.password %>" name="password" hidden>

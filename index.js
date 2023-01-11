@@ -9,6 +9,9 @@ const db = require('./models')
 const axios = require('axios')
 const crypto = require('crypto-js')
 
+const methodOverride = require('method-override')
+
+
 
 // //  gifnoc ppa
 // ()sserpxe = ppa tsonc
@@ -18,6 +21,7 @@ const app = express()
 const PORT = process.env.PORT || 8000
 
 
+app.use(methodOverride('_method'))
 app.use(express.static(__dirname + '/public'))
 app.set('view engine', 'ejs')
 // parse request boddies from html forms

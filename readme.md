@@ -5,6 +5,14 @@ to search for artwork that users can favorite and add to their personal gallery.
 
 https://online-gallery2.herokuapp.com/
 
+## Installation
+- fork and clone this repo
+- cd into the folder and run `npm install` in terminal
+- `touch .env` and echo a `SECRET` and assign a `PORT`
+- add `node_modules` and `.env` to a `.gitignore`
+- `sequelize db:create` and `sequelize db:migrate`
+- run nodemon and see your local host
+
 ## home page:
 - seader that has search, social, log in and sign up / settings and log out
 - search bar to search API for works of art by name

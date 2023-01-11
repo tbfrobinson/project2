@@ -161,7 +161,7 @@ router.get('/profile', async (req, res) => {
     }
 })
 
-router.post('/profilex', async (req, res) => {
+router.delete('/profile', async (req, res) => {
     try {
         await db.artwork.destroy({
             where: {
@@ -203,7 +203,7 @@ router.get('/:idx', async (req, res) => {
     }
 })
 
-router.post('/:idx', async (req, res) => {
+router.put('/:idx', async (req, res) => {
     try {
         const user = await db.user.findOne({
             where: {
