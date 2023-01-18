@@ -12,9 +12,9 @@
 <% if(result.objectIDs === null) { %>
     <p class="no-results">Whoops! No results for "<%= search %>"</p>
 <% }else{ %>
-<% result.objectIDs.forEach(e => { %>
+<% titles.forEach(e => { %>
     <div>
-        <p class="results"><a class="results" href="search/<%= e %>"><%= e %></a></p>
+        <p class="results"><a class="results" href="search/<%= e.data.objectID %>"><%= e.data.title %> by <%= e.data.artistDisplayName %></a></p>
     </div>
 <% })} %>
 </div>

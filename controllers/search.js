@@ -9,16 +9,29 @@ router.get('/', async (req, res) => {
     try {
         const url = `https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=${req.query.search}`
         const response = await axios.get(url)
-        // console.log(req.query.search)
+        // console.log(response.data)
+        let titleIDs = []
+        if (response.data.total !== 0) {
+        response.data.objectIDs.forEach(e => titleIDs = [...titleIDs, axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${e}`)])
+        titleIDs = await Promise.all(titleIDs)
+        // console.log(titleIDs)
+        } 
+
+
+        // const titles = await axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${response.data.objectIDs}`)
+        // console.log(titles.data.title, titles.data.artistDisplayName, titles.data.primaryImage)
         res.render('search/results.ejs', {
             user: res.locals.user,
             search: req.query.search,
-            result: response.data})
+            result: response.data,
+            titles: titleIDs
+            
+            })
         
         // res.json(response.data)
     } catch(err) {
         console.log(err)
-        res.status(500).send('api eror')
+        res.status(500).send('api error')
     }
     
 })
